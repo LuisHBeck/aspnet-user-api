@@ -1,4 +1,25 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using user_api.Data;
+using user_api.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// set db connection
+builder.Services.AddDbContext<UserDbContext>(
+    opts => opts.UseNpgsql(
+        builder.Configuration.GetConnectionString("UserConnection")
+    )
+);
+
+//set identity
+builder.Services
+    .AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<UserDbContext>()
+    .AddDefaultTokenProviders();
+
+// set automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 

@@ -23,7 +23,7 @@ builder.Services
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // set our own classes injection
-builder.Services.AddScoped<RegisterService>();
+builder.Services.AddScoped<UserService>();
 
 // Add services to the container.
 

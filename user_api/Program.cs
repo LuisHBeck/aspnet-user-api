@@ -24,6 +24,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // set our own classes injection
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<TokenService>();
 
 // Add services to the container.
 

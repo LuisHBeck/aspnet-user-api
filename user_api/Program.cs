@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using user_api.Data;
 using user_api.Models;
+using user_api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,9 @@ builder.Services
 
 // set automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// set our own classes injection
+builder.Services.AddScoped<RegisterService>();
 
 // Add services to the container.
 

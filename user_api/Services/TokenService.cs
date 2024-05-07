@@ -17,7 +17,7 @@ public class TokenService
             new Claim("id", user.Id),
             new Claim("username", user.UserName),
             new Claim("normalizedUsername", user.NormalizedUserName),
-            new Claim("birtDate", user.BirthDate)
+            new Claim("birthDate", user.BirthDate)
         };
 
         SymmetricSecurityKey key = new SymmetricSecurityKey(
